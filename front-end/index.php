@@ -10,7 +10,7 @@
         </form>
         <?php
 
-        $json = file_put_contents('http://o-zero/' . $_GET);
+        $json = file_get_contents('http://o-zero/' . $_GET['input']);
         $obj = json_decode($json);
 
         $res = $obj->output;
