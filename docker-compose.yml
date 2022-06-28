@@ -2,9 +2,9 @@ version: '3'
 
 services:
   o-zero:
-    build: ./oZero
+    build: ./o-zero
     volumes:
-      - ./oZero:/usr/src/app
+      - ./o-zero:/usr/src/app
     ports:
       - 5001:80
 

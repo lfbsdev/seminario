@@ -6,7 +6,7 @@ api = Api(app)
 
 class OZeroTransformer(Resource):
     def get(self):
-        return {'oi': 'testando'}
+        return {'output': 'testando'}
     def put(self):
         string = request.form['input']
         string = string.replace('o', '0')
