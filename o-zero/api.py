@@ -5,15 +5,12 @@ app = Flask(__name__)
 api = Api(app)
 
 class OZeroTransformer(Resource):
-    def get(self):
-        return {'output': 'testando'}
-    def put(self):
-        string = request.form['input']
-        string = string.replace('o', '0')
-        string = string.replace('O', '0')
-        return {'output': string}
+    def get(self, x):
+        x = x.replace('o', '0')
+        x = x.replace('O', '0')
+        return {'output': x}
 
-api.add_resource(OZeroTransformer, '/')
+api.add_resource(OZeroTransformer, '/<string:x>')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
